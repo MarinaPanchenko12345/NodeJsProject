@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protected Page</title>
+    <style>
+      body {
+        font-family: "Arial", serif;
+        background: #55ff00;
+        background: -moz-linear-gradient(
+          -45deg,
+          #55ff00 0%,
+          #68a460 50%,
+          #55ff00 100%
+        );
+        background: -webkit-linear-gradient(
+          -45deg,
+          #55ff00 0%,
+          #68a460 50%,
+          #55ff00 100%
+        );
+        background: linear-gradient(
+          135deg,
+          #55ff00 0%,
+          #68a460 50%,
+          #55ff00 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: black;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      a {
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: green;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      a:hover {
+        background-color: limegreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, User</h1>
+    <p>You have successfully logged in.</p>
+    <a href="/logout">Logout</a>
+    <script>
+      fetch("/user-info")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          const userName = data.name;
+
+          document.querySelector("h1").innerText = `Hello, ${userName}`;
+        })
+        .catch((error) => console.error("Error fetching user info:", error));
+    </script>
+  </body>
+</html>

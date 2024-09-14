@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authenticate with Google</title>
+    <style>
+      body {
+        font-family: "Arial", serif;
+        background: #00fbea;
+        background: -moz-linear-gradient(
+          -45deg,
+          #00fbea 0%,
+          #1c6ea4 50%,
+          #82dbe6 100%
+        );
+        background: -webkit-linear-gradient(
+          -45deg,
+          #00fbea 0%,
+          #1c6ea4 50%,
+          #82dbe6 100%
+        );
+        background: linear-gradient(
+          135deg,
+          #00fbea 0%,
+          #1c6ea4 50%,
+          #82dbe6 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: black;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 60px;
+        text-wrap: wrap;
+        text-align: center;
+      }
+      a {
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: #5291f5;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      a:hover {
+        background-color: #245ab0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <p>To proceed, please authenticate with Google.</p>
+    <a href="/auth/google">Authenticate with Google</a>
+  </body>
+</html>
