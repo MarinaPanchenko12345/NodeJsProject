@@ -47,7 +47,7 @@ Follow these steps to set up and run the project:
        *Runs the app with nodemon
        *The page will reload if you make edits
        *The print at the terminal will be blue with the message:"listening on port 9898"
-       *And if there are no login errors you should see the message painted in yellow: "Connected to Local database".
+       *And if there are no login errors you should see the message painted in yellow: "Connected to Local database" or "Connected to Atlas database".
 
 ***Main Features
 1. **User Management:
