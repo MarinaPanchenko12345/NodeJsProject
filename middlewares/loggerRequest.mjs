@@ -16,6 +16,9 @@ function getDefaultStatusMessage(statusCode) {
 //Middleware to log HTTP requests and responses.
 //Logs details of requests that result errors into a file named with the current date.
 export const loggerRequest = (req, res, next) => {
+  if (req.url === "/favicon.ico") {
+    return next();
+  }
   const fileName = "logger_" + moment().format("YYYY_MM_DD"); // File name based on the current date
   let fileContent = "";
 
