@@ -25,9 +25,9 @@ NodeJsProject is a server-side application built with Node.js using Express.js a
 ***Installation***
 Follow these steps to set up and run the project:
 1. **Clone the repository:**
-      Create a folder and open the terminal ,use Git to clone the repository to your local machine: git clone https://
+      Create a folder and open the terminal ,use Git to clone the repository to your local machine: git clone https://github.com/MarinaPanchenko12345/NodeJsProject
      
-      Alternatively, you can download the repository as a ZIP file directly from GitHub: https://
+      Alternatively, you can download the repository as a ZIP file directly from GitHub: https://github.com/MarinaPanchenko12345/NodeJsProject
         On the repository's GitHub page, click the Code button, then select Download ZIP.
         After downloading, extract the ZIP file to your local machine.
        
