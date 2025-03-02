@@ -70,7 +70,7 @@ Follow these steps to set up and run the project:
    - The print at the terminal will be blue with the message:`"listening on port 9898"`
    - And if there are no login errors you should see the message painted in yellow: `"Connected to Local database"`.
 
-### Main Features
+## Main Features
 
 1. **User Management:**
 
