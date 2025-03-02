@@ -1,25 +1,27 @@
-Backend for NodeJsProject
-**Description**
-NodeJsProject is a server-side application built with Node.js using Express.js and MongoDB/MongoDB Atlas for managing user and card data. The project implements user authentication, cards and users management,and uses JWT to secure routes and perform authorization.
+# Backend for NodeJsProject
+
+## Description
+
+**NodeJsProject** is a server-side application built with Node.js using Express.js and MongoDB/MongoDB Atlas for managing user and card data. The project implements user authentication, cards and users management,and uses JWT to secure routes and perform authorization.
 
 ### Technology Stack
 
-Node.js – A server platform for executing JavaScript code.
-Express.js – A minimalist framework for building server-side applications.
-MongoDB and Mongoose – A NoSQL database and an ODM for working with MongoDB.
-JWT (JSON Web Tokens) – Used for user authentication and authorization.
-Passport.js – For authentication via Google OAuth.
-bcrypt – For hashing passwords.
-Morgan – For logging HTTP requests.
-Dotenv – For managing environment variables.
-CORS – For handling cross-origin requests.
-Country-list – For working with country lists.
-Express-session – For managing user sessions.
-FS (File System) – A module for working with the file system.
-Joi – For data validation.
-JWT-decode – For decoding JWT tokens.
-Moment.js – For working with dates and times.
-Chalk – For coloring console messages.
+- **Node.js** – A server platform for executing JavaScript code.
+- **Express.js** – A minimalist framework for building server-side applications.
+- **MongoDB and Mongoose** – A NoSQL database and an ODM for working with MongoDB.
+- **JWT (JSON Web Tokens)** – Used for user authentication and authorization.
+- **Passport.js** – For authentication via Google OAuth.
+- **bcrypt** – For hashing passwords.
+- **Morgan** – For logging HTTP requests.
+- **Dotenv** – For managing environment variables.
+- **CORS** – For handling cross-origin requests.
+- **Country-list** – For working with country lists.
+- **Express-session** – For managing user sessions.
+- **FS (File System)** – A module for working with the file system.
+- **Joi** – For data validation.
+- **JWT-decode** – For decoding JWT tokens.
+- **Moment.js** – For working with dates and times.
+- **Chalk** – For coloring console messages.
 
 ## Installation
 
@@ -101,82 +103,4 @@ Follow these steps to set up and run the project:
 6. **API Documentation**
    A detailed description of all API endpoints is available in the Postman documentation. To use and test the requests via Postman, you can follow this link: **https://documenter.getpostman.com/view/35946649/2sAXqp7i7x**
 
-### Project Structure
 
-backend/
-│
-handlers/
-├── authgoogle/ # Auth google management
-│ ├── model/  
-│ │ ├── userGoogleMongoose.mjs # Model and methods for working with Mongoose
-│ ├── routes/  
-│ │ └── authGoogle.mjs # Routes for Google Auth management
-│ ├── service/  
-│ └── passportGoogle.mjs # Logic for handling Google OAuth with Passport.js
-│  
-├── cards/ # Card management
-│ ├── model/  
-│ │ ├── cardModel.mjs # Data model for cards (used during creation)
-│ │ ├── cardMongoose.mjs # Model and methods for working with Mongoose
-│ ├── routes/  
-│ │ └── cards.mjs # Routes for card management
-│ ├── service/  
-│ │ ├── bizNumberGenerator.mjs # BizNumber generator for cards
-│ │ └── cardService.mjs # Logic for working with cards
-│ └── validation/  
-│ └── cardJoi.mjs # Joi schema for validating card data
-
-├── users/ # User management
-│ ├── model/  
-│ │ ├── loginAttemptMongoose.mjs # Model for login attempts
-│ │ ├── userModel.mjs # Data model for users (used during creation)
-│ │ └── userMongoose.mjs # Methods for working with Mongoose
-│ ├── routes/  
-│ │ └── users.mjs # Routes for user management
-│ ├── service/  
-│ │ ├── generateToken.mjs # JWT token generation
-│ │ ├── loginAttemptService.mjs # Logic for handling login attempts, with automatic folder creation if it doesn't exist in the database
-│ │ └── userService.mjs # Logic for working with users
-│ └── validation/  
-│ ├── authJoi.mjs # Joi schema for validating authentication data
-│ └── userUpdateJoi.mjs # Joi schema for validating user updates
-
-helpers/
-└── db.helper.mjs # Functions for connecting to the database (local or Atlas).
-
-initial-data/
-├── initial-data.mjs # File with initial data (users and cards)
-└── initial-data.service.mjs # Logic for initializing data in the database, creating users and cards, and creating folders for storing data
-
-middlewares/
-├── cors.mjs # CORS configuration
-├── guard.mjs # Middleware for authentication and authorization (JWT tokens)
-├── loggerConsole.mjs # Logging requests to the console using morgan, chalk, and moment
-└── loggerRequest.mjs # Logging requests to a file using fs and moment.Logs are stored in the logs folder, with a new file created for each day.
-
-public/
-├── images/ # Folder for storing images
-└── 404.html # Custom 404 error page
-└── googleAuth.html # Page for prompting users to authenticate with Google
-└── googleProtected.html # Protected page displayed after successful Google authentication
-
-routes/
-└── router.mjs # The main application router, combining routes for cards, users and Google Auth.
-
-utils/
-├── handleError404.mjs # Handler for sending 404 errors, serves an HTML page (from public) for incorrect routes
-└── handleErrors.mjs # Universal error handler, including validation errors (Joi and Mongoose)
-└── htmlGoogle.mjs # Functions for sending authentication and protected pages for Google OAuth
-
-server.mjs # The main file for starting the Express server.
-Loads environment variables using dotenv.
-Connects to the database using connectDB.
-Initializes the database with data using initializeData.
-Sets up the server using Express.
-Applies middleware for logging requests to both the console and files, as well as handling CORS.
-Configures routing through the main router.
-Serves static files from the public folder.
-Handles 404 errors with a custom page or a text message.
-Centralized handling of errors with status code 500.
-Starts the server on the port specified in the environment variables and logs the startup message using chalk.
-This file serves as the entry point for starting the entire application.
